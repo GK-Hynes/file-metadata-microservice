@@ -2,7 +2,7 @@
 
 A file metadata microservice built for the freeCodeCamp APIs and Microservices certificate.
 
-[View live project](https://boilerplate-project-filemetadata.gkhynes.repl.co)
+[View live project](https://file-metadata-microservice.gkhynes.repl.co)
 
 ### Requirements
 
