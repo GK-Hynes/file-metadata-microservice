@@ -19,7 +19,7 @@
   </head>
 
   <body>
-    <div class="container">
+    <main class="container">
       <h1>File Metadata Microservice</h1>
       <h2>Please Upload a File</h2>
       <div class="view">
@@ -46,22 +46,28 @@
             </svg>
 
             <div class="upload-group">
-              <label for="inputfield">
-                <span class="select-file">Select a file...</span>
+              <label for="inputfield" class="input-label" id="inputLabel">
+                <span class="select-file" role="button" tabindex="0"
+                  >Select a file...</span
+                >
                 <input
                   id="inputfield"
                   type="file"
                   name="upfile"
                   class="screen-reader"
+                  autocomplete="off"
                 />
               </label>
-              <span id="fileChosen">No file chosen</span>
+
+              <span id="fileChosen" class="file-chosen" tabindex="0"
+                >No file chosen</span
+              >
             </div>
           </div>
           <input id="button" type="submit" value="Upload" class="button" />
         </form>
       </div>
-    </div>
+    </main>
     <footer class="footer">
       <p>
         Built for the
@@ -71,9 +77,20 @@
 
     <script>
       const fileUpload = document.getElementById("inputfield");
+      const uploadLabel = document.getElementById("inputLabel");
       const fileChosen = document.getElementById("fileChosen");
       fileUpload.addEventListener("change", function () {
         fileChosen.textContent = this.files[0].name;
+      });
+      uploadLabel.addEventListener("keypress", function (e) {
+        e.preventDefault();
+        if (e.keyCode === 13) {
+          fileUpload.click();
+        }
+      });
+      fileUpload.addEventListener("keypress", function (e) {
+        e.preventDefault();
+        console.log("Pressed");
       });
     </script>
   </body>

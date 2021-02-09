@@ -1,9 +1,8 @@
-/****** Main Styling ******/
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  /* outline: 1px solid red; */
 }
 
 body {
@@ -57,13 +56,18 @@ a {
   justify-content: space-evenly;
 }
 
-label {
+.input-label {
   position: relative;
   margin-bottom: 1rem;
 }
 
+.input-label:focus {
+  outline: 2px dotted #1e3a8a;
+}
+
 .select-file {
   color: #3b82f6;
+  font-weight: 600;
   cursor: pointer;
 }
 
@@ -85,6 +89,10 @@ label {
   border-width: 0;
 }
 
+.file-chosen:focus {
+  outline: 2px dotted #1e3a8a;
+}
+
 .button {
   display: inline-flex;
   width: 100%;
@@ -92,6 +100,8 @@ label {
   margin: 1rem;
   padding: 0.5rem 1rem;
   font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
   color: #fff;
   background-color: #2563eb;
   border: 1px solid transparent;
@@ -101,6 +111,10 @@ label {
 
 .button:hover {
   background-color: #1d4ed8;
+}
+
+.button:focus {
+  outline: 2px dotted #1e3a8a;
 }
 
 .footer {
