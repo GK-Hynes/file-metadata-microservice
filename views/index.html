@@ -1,44 +1,80 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
   <head>
-    <title>File Metadata</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File Metadata Microservice</title>
     <link
       rel="shortcut icon"
       href="https://cdn.freecodecamp.org/universal/favicons/favicon-32x32.png"
       type="image/x-icon"
     />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css?family=Roboto"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
       rel="stylesheet"
-      type="text/css"
     />
     <link href="/public/style.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
     <div class="container">
-      <h2>API Project: File Metadata Microservice</h2>
-
-      <h3>Usage:</h3>
-      <p>Please Upload a File ...</p>
+      <h1>File Metadata Microservice</h1>
+      <h2>Please Upload a File</h2>
       <div class="view">
-        <h4 id="output"></h4>
+        <h3 id="output"></h3>
         <form
           enctype="multipart/form-data"
           method="POST"
           action="/api/fileanalyse"
         >
-          <input id="inputfield" type="file" name="upfile" />
-          <input id="button" type="submit" value="Upload" />
+          <div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              class="icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+              />
+            </svg>
+
+            <div class="upload-group">
+              <label for="inputfield">
+                <span class="select-file">Select a file...</span>
+                <input
+                  id="inputfield"
+                  type="file"
+                  name="upfile"
+                  class="screen-reader"
+                />
+              </label>
+              <span id="fileChosen">No file chosen</span>
+            </div>
+          </div>
+          <input id="button" type="submit" value="Upload" class="button" />
         </form>
       </div>
     </div>
-    <div class="footer">
+    <footer class="footer">
       <p>
         Built for the
         <a href="http://www.freecodecamp.com">freeCodeCamp</a> curriculum.
       </p>
-    </div>
+    </footer>
+
+    <script>
+      const fileUpload = document.getElementById("inputfield");
+      const fileChosen = document.getElementById("fileChosen");
+      fileUpload.addEventListener("change", function () {
+        fileChosen.textContent = this.files[0].name;
+      });
+    </script>
   </body>
 </html>

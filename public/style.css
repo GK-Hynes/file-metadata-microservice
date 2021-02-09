@@ -1,42 +1,108 @@
 /****** Main Styling ******/
 
-body {
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-  color: #222;
-  background-color: #ECF0F1;
-  text-align: center;
-}
-
-.container {
+* {
+  box-sizing: border-box;
+  margin: 0;
   padding: 0;
-  margin-top: 40px;
 }
 
-.footer {
-  margin-top: 60px;
+body {
+  font-family: "Inter", sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  color: #111827;
+  background-color: #eff6ff;
+  font-size: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
 
 a {
-  color: #2574A9;
+  color: #1d4ed8;
 }
 
-input {
-  display: block;
-  position: relative;
-  margin: 10px auto;
-}
-
-input#button {
-  width: 230px;
+.container {
+  max-width: 900px;
+  margin: 3.5rem auto;
+  padding: 1rem;
+  flex: 1;
 }
 
 .view {
-  position:relative;
-  margin: auto;
-  margin-top: 40px;
-  border: 1px  solid  #aaa;
-  padding: 20px;
-  width: 60%;
-  min-width: 400px;
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 2.5rem auto;
+  padding: 2rem;
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.upload-group {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+label {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.select-file {
+  color: #3b82f6;
+  cursor: pointer;
+}
+
+.icon {
+  width: 24px;
+  stroke: #9ca3af;
+  margin-bottom: 1rem;
+}
+
+.screen-reader {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.button {
+  display: inline-flex;
+  width: 100%;
+  max-width: 260px;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  font-family: inherit;
+  color: #fff;
+  background-color: #2563eb;
+  border: 1px solid transparent;
+  border-radius: 0.375rem;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #1d4ed8;
+}
+
+.footer {
+  padding: 1rem;
 }
