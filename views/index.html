@@ -47,9 +47,7 @@
 
             <div class="upload-group">
               <label for="inputfield" class="input-label" id="inputLabel">
-                <span class="select-file" role="button" tabindex="0"
-                  >Select a file...</span
-                >
+                <span class="select-file" role="button">Select a file...</span>
                 <input
                   id="inputfield"
                   type="file"
@@ -70,27 +68,17 @@
     </main>
     <footer class="footer">
       <p>
-        Built for the
-        <a href="http://www.freecodecamp.com">freeCodeCamp</a> curriculum.
+        Built by <a href="https://github.com/GK-Hynes">Gerard Hynes</a> for the
+        <a href="http://www.freecodecamp.com">freeCodeCamp</a> APIs and
+        Microservices Certificate.
       </p>
     </footer>
 
     <script>
       const fileUpload = document.getElementById("inputfield");
-      const uploadLabel = document.getElementById("inputLabel");
       const fileChosen = document.getElementById("fileChosen");
       fileUpload.addEventListener("change", function () {
         fileChosen.textContent = this.files[0].name;
-      });
-      uploadLabel.addEventListener("keypress", function (e) {
-        e.preventDefault();
-        if (e.keyCode === 13) {
-          fileUpload.click();
-        }
-      });
-      fileUpload.addEventListener("keypress", function (e) {
-        e.preventDefault();
-        console.log("Pressed");
       });
     </script>
   </body>

@@ -2,7 +2,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /* outline: 1px solid red; */
 }
 
 body {
@@ -13,8 +12,6 @@ body {
   background-color: #eff6ff;
   font-size: 1rem;
   text-align: center;
-  display: flex;
-  flex-direction: column;
 }
 
 h1 {
@@ -29,6 +26,7 @@ h2 {
 
 a {
   color: #1d4ed8;
+  font-weight: 600;
 }
 
 .container {
@@ -61,8 +59,8 @@ a {
   margin-bottom: 1rem;
 }
 
-.input-label:focus {
-  outline: 2px dotted #1e3a8a;
+.input-label:focus-within {
+  outline: 3px solid #1e3a8a;
 }
 
 .select-file {
@@ -90,7 +88,7 @@ a {
 }
 
 .file-chosen:focus {
-  outline: 2px dotted #1e3a8a;
+  outline: 3px solid #1e3a8a;
 }
 
 .button {
@@ -114,7 +112,7 @@ a {
 }
 
 .button:focus {
-  outline: 2px dotted #1e3a8a;
+  outline: 3px solid #1e3a8a;
 }
 
 .footer {
