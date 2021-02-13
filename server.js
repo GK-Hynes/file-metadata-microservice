@@ -15,11 +15,16 @@ app.get("/", (req, res) => {
 });
 
 app.post("/api/fileanalyse", upload.single("upfile"), (req, res) => {
-  res.json({
-    name: req.file.originalname,
-    type: req.file.mimetype,
-    size: req.file.size
-  });
+  try {
+    const { originalname, mimetype, size } = req.file;
+    res.json({
+      name: originalname,
+      type: mimetype,
+      size: size
+    });
+  } catch (error) {
+    console.error(error);
+  }
 });
 
 app.listen(port, () => {
